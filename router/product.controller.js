@@ -234,7 +234,7 @@ export default class ProductController {
   }
 }
 
-// 상품 이미지 등록 함수
+// 상품 이미지 등록 lib
 const registerImages = (mainImage, productId) => {
   mainImage.forEach(async (data) => {
     await ProductImages.create({
