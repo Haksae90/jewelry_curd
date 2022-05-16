@@ -110,12 +110,7 @@ export default class ProductController {
       );
 
       if (!productDetail) {
-        return res
-          .status(400)
-          .json({
-            success: false,
-            errorMessage: 'There is no matching product',
-          });
+        return res.status(400).json({ success: false, errorMessage: 'There is no matching product' });
       }
 
       res.status(200).json({ productDetail, success: true, message: 'successfully loaded' });
