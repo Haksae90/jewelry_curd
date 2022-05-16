@@ -58,13 +58,13 @@ export default class ProductController {
     try {
       const filters = [];
       const replacements = [];
-      for (let obj in req.query) {
-        if (obj === 'categoryId') {
-          filters.push(`c.${obj}=?`);
+      for (let filter in req.query) {
+        if (filter === 'categoryId') {
+          filters.push(`c.${filter}=?`);
         } else {
-          filters.push(`${obj}=?`);
+          filters.push(`${filter}=?`);
         }
-        replacements.push(req.query[obj]);
+        replacements.push(req.query[filter]);
       }
       const baseQuery = [
         `SELECT p.*,
